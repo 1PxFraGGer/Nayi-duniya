@@ -1,0 +1,47 @@
+/* Branded route transition — 1000ms total: cover 0-290, hold, reveal 700-1000. */
+.pt-root { position: fixed; inset: 0; z-index: 1000; overflow: hidden; pointer-events: all; cursor: progress; }
+.pt-panel { position: absolute; inset: 0; will-change: transform; }
+.pt-accent { background: var(--c-accent); }
+.pt-brand { background: var(--c-brand-900); display: grid; place-items: center; }
+.pt-brand::before { content: ''; position: absolute; inset: 0; background: radial-gradient(60% 60% at 50% 45%, rgba(11, 107, 87, .55), transparent 70%); }
+
+.pt-in .pt-accent { animation: pt-up 230ms var(--ease) both; }
+.pt-in .pt-brand { animation: pt-up 240ms var(--ease) 50ms both; }
+.pt-hold .pt-panel, .pt-in .pt-panel { transform: translateY(0); }
+.pt-out .pt-brand { animation: pt-away 250ms cubic-bezier(.65, 0, .35, 1) both; }
+.pt-out .pt-accent { animation: pt-away 250ms cubic-bezier(.65, 0, .35, 1) 50ms both; }
+@keyframes pt-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes pt-away { from { transform: translateY(0); } to { transform: translateY(-100%); } }
+
+.pt-center { position: relative; display: grid; justify-items: center; gap: 18px; }
+.pt-out .pt-center { animation: pt-fade 140ms ease-out both; }
+@keyframes pt-fade { to { opacity: 0; transform: translateY(-10px); } }
+.pt-mark { width: 84px; height: 84px; }
+.pt-mark .m-bg { fill: rgba(255, 255, 255, .08); stroke: rgba(255, 255, 255, .22); stroke-width: 1.5; }
+.pt-mark .m-roof { fill: none; stroke: #fff; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 80; stroke-dashoffset: 80; animation: pt-draw 340ms var(--ease) 100ms forwards; }
+.pt-mark .m-dot { fill: var(--c-accent); transform-box: fill-box; transform-origin: center; transform: scale(0); animation: pt-pop 260ms var(--ease) 360ms forwards; }
+@keyframes pt-draw { to { stroke-dashoffset: 0; } }
+@keyframes pt-pop { to { transform: scale(1); } }
+.pt-word { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 28px; letter-spacing: -.04em; color: #fff; opacity: 0; animation: pt-rise 280ms var(--ease) 200ms forwards; }
+.pt-word span { color: var(--c-accent); }
+@keyframes pt-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.pt-bar { width: 148px; height: 3px; border-radius: 3px; background: rgba(255, 255, 255, .16); overflow: hidden; opacity: 0; animation: pt-rise 200ms ease 220ms forwards; }
+.pt-bar i { display: block; height: 100%; background: var(--c-accent); transform-origin: left; transform: scaleX(0); animation: pt-fill 400ms cubic-bezier(.4, 0, .2, 1) 260ms forwards; }
+@keyframes pt-fill { to { transform: scaleX(1); } }
+/* Destination is still loading after the minimum time: a calm pulse instead of an exposed half-page. */
+.is-waiting .pt-bar i { animation: pt-fill 400ms cubic-bezier(.4, 0, .2, 1) 260ms forwards, pt-pulse 1s ease-in-out .7s infinite alternate; }
+@keyframes pt-pulse { from { opacity: 1; } to { opacity: .35; } }
+
+@media (prefers-reduced-motion: reduce) {
+  /* Same 1000ms, but only gentle fades — no sliding panels or drawing. */
+  .pt-in .pt-accent, .pt-in .pt-brand { animation: pt-fadein 200ms ease both !important; }
+  .pt-out .pt-brand, .pt-out .pt-accent { animation: pt-fadeout 260ms ease both !important; }
+  .pt-accent { display: none; }
+  .pt-mark .m-roof { stroke-dashoffset: 0; animation: none !important; }
+  .pt-mark .m-dot { transform: scale(1); animation: none !important; }
+  .pt-word, .pt-bar { opacity: 1; animation: none !important; }
+  .pt-bar i { transform: scaleX(1); animation: none !important; }
+  .pt-out .pt-center { animation: none !important; }
+}
+@keyframes pt-fadein { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pt-fadeout { from { opacity: 1; } to { opacity: 0; } }

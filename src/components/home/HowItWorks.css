@@ -1,0 +1,775 @@
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --hiw-bg: #ffffff;
+  --hiw-surface: #faf8f3;
+  --hiw-border: #e3ded5;
+  --hiw-accent: #885332;
+  --hiw-accent2: #a87048;
+  --hiw-accent-lt: rgba(136,83,50, 0.09);
+  --hiw-text: #18272d;
+  --hiw-muted: #686b69;
+  --hiw-radius: 20px;
+  --hiw-font-d: "Fraunces", Georgia, serif;
+  --hiw-font-b: "DM Sans", sans-serif;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.hiw-section {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding:
+    78px
+    24px
+    88px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fafbff 100%
+    );
+
+  font-family:
+    var(--hiw-font-b);
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.hiw-grid-bg {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.5;
+
+  background-image:
+    linear-gradient(
+      rgba(136,83,50, 0.028)
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(136,83,50, 0.028)
+      1px,
+      transparent 1px
+    );
+
+  background-size:
+    58px
+    58px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   BLOBS
+========================================================= */
+
+.hiw-blob {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  will-change: transform;
+}
+
+.hiw-blob--a {
+  width: 420px;
+  height: 420px;
+
+  top: -110px;
+  right: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      #c9a988,
+      transparent 70%
+    );
+
+  opacity: 0.14;
+
+  animation:
+    hiwBlobA
+    10s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.hiw-blob--b {
+  width: 350px;
+  height: 350px;
+
+  bottom: -100px;
+  left: -80px;
+
+  background:
+    radial-gradient(
+      circle,
+      #ddd6fe,
+      transparent 70%
+    );
+
+  opacity: 0.14;
+
+  animation:
+    hiwBlobB
+    12s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes hiwBlobA {
+  from {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  to {
+    transform:
+      translate3d(-30px, 28px, 0)
+      scale(1.06);
+  }
+}
+
+@keyframes hiwBlobB {
+  from {
+    transform:
+      translate3d(0, 0, 0);
+  }
+
+  to {
+    transform:
+      translate3d(32px, -24px, 0)
+      scale(1.08);
+  }
+}
+
+
+/* =========================================================
+   WRAPPER
+========================================================= */
+
+.hiw-wrapper {
+  position: relative;
+
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.hiw-header {
+  max-width: 680px;
+
+  margin:
+    0
+    auto
+    46px;
+
+  text-align: center;
+}
+
+.hiw-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  padding:
+    6px
+    14px;
+
+  background:
+    var(--hiw-accent-lt);
+
+  color:
+    var(--hiw-accent);
+
+  border:
+    1px solid
+    rgba(136,83,50, 0.17);
+
+  border-radius: 100px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform: uppercase;
+}
+
+.hiw-title {
+  margin:
+    0
+    0
+    11px;
+
+  color:
+    var(--hiw-text);
+
+  font-family:
+    var(--hiw-font-d);
+
+  font-size:
+    clamp(34px, 4.5vw, 48px);
+
+  font-weight: 900;
+
+  line-height: 1.08;
+
+  letter-spacing:
+    -0.9px;
+}
+
+.hiw-subtitle {
+  margin: 0;
+
+  color:
+    var(--hiw-muted);
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.hiw-grid {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.hiw-card {
+  position: relative;
+
+  min-width: 0;
+  min-height: 240px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  padding:
+    30px
+    20px
+    28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f8f9ff
+    );
+
+  border:
+    1px solid
+    var(--hiw-border);
+
+  border-radius:
+    var(--hiw-radius);
+
+  text-align: center;
+
+  box-shadow:
+    0 6px 18px
+    rgba(15, 23, 42, 0.045);
+
+  overflow: visible;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.hiw-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(136,83,50, 0.11),
+      transparent 60%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+.hiw-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(136,83,50, 0.26);
+
+  box-shadow:
+    0 16px 34px
+    rgba(136,83,50, 0.10);
+}
+
+.hiw-card:hover::before {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   CONNECTOR
+========================================================= */
+
+.hiw-connector {
+  position: absolute;
+
+  top: 58px;
+  right: -46px;
+
+  width: 72px;
+
+  color: #ddc9ad;
+
+  z-index: 5;
+
+  pointer-events: none;
+}
+
+.hiw-connector svg {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.hiw-icon-wrap {
+  position: relative;
+
+  width: 66px;
+  height: 66px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 4px;
+
+  border-radius: 19px;
+
+  color:
+    var(--hiw-accent);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(136,83,50, 0.11),
+      rgba(124, 58, 237, 0.07)
+    );
+
+  border:
+    1px solid
+    rgba(136,83,50, 0.14);
+
+  box-shadow:
+    inset
+    0
+    1px
+    0
+    rgba(255, 255, 255, 0.9),
+    0
+    7px
+    18px
+    rgba(136,83,50, 0.07);
+
+  overflow: visible;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hiw-icon-wrap::before {
+  content: "";
+
+  position: absolute;
+
+  top: -45%;
+  left: -40%;
+
+  width: 65%;
+  height: 180%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.48),
+      transparent
+    );
+
+  transform:
+    rotate(18deg);
+
+  opacity: 0;
+
+  transition:
+    left 0.6s ease,
+    opacity 0.3s ease;
+}
+
+.hiw-icon-wrap svg {
+  position: relative;
+
+  z-index: 2;
+
+  width: 29px;
+  height: 29px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.hiw-card:hover
+.hiw-icon-wrap {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #885332,
+      #a87048
+    );
+
+  transform:
+    rotate(-4deg)
+    scale(1.06);
+
+  box-shadow:
+    0 12px 28px
+    rgba(136,83,50, 0.26);
+}
+
+.hiw-card:hover
+.hiw-icon-wrap::before {
+  left: 120%;
+
+  opacity: 1;
+}
+
+.hiw-card:hover
+.hiw-icon-wrap svg {
+  transform:
+    scale(1.08);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.hiw-step-num {
+  position: absolute;
+
+  top: -9px;
+  right: -9px;
+
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #885332,
+      #a87048
+    );
+
+  color: #ffffff;
+
+  border: 2px solid #ffffff;
+
+  font-family:
+    var(--hiw-font-d);
+
+  font-size: 11px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 4px 12px
+    rgba(136,83,50, 0.28);
+}
+
+
+/* =========================================================
+   TEXT
+========================================================= */
+
+.hiw-card-title {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0;
+
+  color:
+    var(--hiw-text);
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  transition:
+    color 0.25s ease;
+}
+
+.hiw-card:hover
+.hiw-card-title {
+  color:
+    var(--hiw-accent);
+}
+
+.hiw-card-desc {
+  position: relative;
+
+  z-index: 2;
+
+  margin: 0;
+
+  color:
+    var(--hiw-muted);
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1024px) {
+
+  .hiw-wrapper {
+    width: 94%;
+  }
+
+  .hiw-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 18px;
+  }
+
+  .hiw-connector {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .hiw-section {
+    padding:
+      58px
+      14px
+      68px;
+  }
+
+  .hiw-wrapper {
+    width: 100%;
+  }
+
+  .hiw-header {
+    margin-bottom: 30px;
+  }
+
+  .hiw-title {
+    font-size:
+      clamp(30px, 9vw, 38px);
+  }
+
+  .hiw-subtitle {
+    font-size: 14px;
+  }
+
+  .hiw-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 14px;
+  }
+
+  .hiw-card {
+    min-height: auto;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 16px;
+
+    padding:
+      20px
+      18px;
+
+    text-align: left;
+  }
+
+  .hiw-icon-wrap {
+    width: 56px;
+    height: 56px;
+
+    flex-shrink: 0;
+
+    margin-bottom: 0;
+
+    border-radius: 16px;
+  }
+
+  .hiw-icon-wrap svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hiw-card-title {
+    font-size: 16px;
+  }
+
+  .hiw-card-desc {
+    font-size: 13px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .hiw-blob {
+    animation: none;
+  }
+
+  .hiw-card,
+  .hiw-icon-wrap,
+  .hiw-icon-wrap::before,
+  .hiw-icon-wrap svg {
+    transition: none;
+  }
+
+}

@@ -1,0 +1,1054 @@
+/* =========================================================
+   ALL CATEGORY SERVICES
+   UNIQUE PREFIX: acs-
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.acs-section {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  padding: 65px 20px;
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(124, 58, 237, 0.025),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 100% 100%,
+      rgba(37, 99, 235, 0.025),
+      transparent 30%
+    ),
+    #ffffff;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.acs-container {
+  width: 90%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CATEGORY SECTION
+   ========================================================= */
+
+.acs-category-section {
+  width: 100%;
+  max-width: 100%;
+
+  margin-bottom: 58px;
+
+  box-sizing: border-box;
+}
+
+
+.acs-category-section:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.acs-header {
+  width: 100%;
+  max-width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 24px;
+
+  padding-bottom: 22px;
+
+  box-sizing: border-box;
+
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.acs-title {
+  position: relative;
+
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 700;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.3px;
+
+  color: #111827;
+}
+
+
+.acs-title::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -11px;
+
+  width: 48px;
+  height: 3px;
+
+  border-radius: 100px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #a87048,
+      #2563eb
+    );
+
+  transition:
+    width 0.3s ease;
+}
+
+
+.acs-category-section:hover
+.acs-title::after {
+  width: 74px;
+}
+
+
+/* =========================================================
+   VIEW ALL
+   ========================================================= */
+
+.acs-view-all-btn {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 92px;
+
+  padding: 10px 18px;
+
+  background: #ffffff;
+
+  color: #885332;
+
+  border: 1px solid #885332;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1;
+
+  text-decoration: none;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 4px 12px
+    rgba(136,83,50, 0.10);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.acs-view-all-btn:hover {
+  background: #885332;
+
+  color: #ffffff;
+
+  border-color: #885332;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 18px
+    rgba(136,83,50, 0.20);
+}
+
+
+/* =========================================================
+   GRID
+   DESKTOP = 4 CARDS
+   ========================================================= */
+
+.acs-grid {
+  width: 100%;
+  max-width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  align-items: stretch;
+
+  gap: 20px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.acs-card {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  min-width: 0;
+
+  min-height: 375px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #ffffff 80%,
+      #fafaff 100%
+    );
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 17px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.05);
+
+  opacity: 0;
+
+  transform:
+    translateY(16px);
+
+  animation:
+    acsCardEnter
+    0.55s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    )
+    forwards;
+
+  transition:
+    transform 0.35s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =========================================================
+   STAGGER
+   ========================================================= */
+
+.acs-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.acs-card:nth-child(2) {
+  animation-delay: 0.10s;
+}
+
+.acs-card:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.acs-card:nth-child(4) {
+  animation-delay: 0.20s;
+}
+
+
+/* =========================================================
+   CARD GLOW
+   ========================================================= */
+
+.acs-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(124, 58, 237, 0.025),
+      transparent 50%,
+      rgba(37, 99, 235, 0.035)
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  z-index: -1;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+
+/* =========================================================
+   SHINE
+   ========================================================= */
+
+.acs-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: -75%;
+
+  width: 38%;
+  height: 300%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.48),
+      transparent
+    );
+
+  transform:
+    rotate(15deg);
+
+  pointer-events: none;
+
+  z-index: 5;
+
+  transition:
+    left 0.75s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+   ========================================================= */
+
+.acs-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(124, 58, 237, 0.22);
+
+  box-shadow:
+    0 10px 24px
+      rgba(15, 23, 42, 0.07),
+    0 18px 38px
+      rgba(15, 23, 42, 0.07);
+}
+
+
+.acs-card:hover::before {
+  opacity: 1;
+}
+
+
+.acs-card:hover::after {
+  left: 140%;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.acs-image-wrap {
+  width: 100%;
+
+  height: 165px;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background: #f1f5f9;
+}
+
+
+.acs-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: inherit;
+
+  transform: scale(1);
+
+  transition:
+    transform 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    filter 0.3s ease;
+}
+
+
+.acs-card:hover
+.acs-image {
+  transform:
+    scale(1.045);
+
+  filter:
+    brightness(1.02)
+    saturate(1.04);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.acs-content {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    13px
+    5px
+    3px;
+}
+
+
+/* =========================================================
+   CATEGORY TAG
+   ========================================================= */
+
+.acs-category-tag {
+  width: fit-content;
+
+  margin-bottom: 8px;
+
+  padding:
+    5px
+    9px;
+
+  background:
+    rgba(124, 58, 237, 0.07);
+
+  color: #6d28d9;
+
+  border-radius: 6px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.acs-card-title {
+  margin:
+    0
+    0
+    9px;
+
+  min-height: 45px;
+
+  display: -webkit-box;
+
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+
+  color: #111827;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.acs-card:hover
+.acs-card-title {
+  color: #5b21b6;
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.acs-price {
+  margin:
+    0
+    0
+    13px;
+
+  color: #2563eb;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   DETAILS BUTTON
+   ========================================================= */
+
+.acs-details-btn {
+  width: 100%;
+
+  margin-top: auto;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  padding:
+    10px
+    12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #885332
+    );
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  text-decoration: none;
+
+  border-radius: 8px;
+
+  box-shadow:
+    0 4px 12px
+    rgba(37, 99, 235, 0.16);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+
+.acs-details-btn:hover {
+  transform:
+    translateY(-2px);
+
+  filter:
+    brightness(1.06);
+
+  box-shadow:
+    0 8px 18px
+    rgba(37, 99, 235, 0.24);
+}
+
+
+/* =========================================================
+   NO SERVICES
+   ========================================================= */
+
+.acs-no-services {
+  width: 100%;
+
+  padding:
+    30px
+    20px;
+
+  box-sizing: border-box;
+
+  background: #fafafa;
+
+  border:
+    1px dashed
+    #d8d8d8;
+
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+
+.acs-no-services p {
+  margin: 0;
+
+  color: #686b69;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   LOADING / EMPTY PAGE
+   ========================================================= */
+
+.acs-loading,
+.acs-empty-page {
+  padding:
+    40px
+    20px;
+
+  text-align: center;
+
+  color: #686b69;
+}
+
+
+/* =========================================================
+   CARD ANIMATION
+   ========================================================= */
+
+@keyframes acsCardEnter {
+
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(18px)
+      scale(0.98);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      translateY(-2px)
+      scale(1.005);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================================
+   LAPTOP
+   3 CARDS
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+  .acs-container {
+    width: 94%;
+  }
+
+
+  .acs-grid {
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0, 1fr)
+      );
+
+    gap: 18px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   2 CARDS
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .acs-section {
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+      50px
+      16px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+
+  .acs-container {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+
+    box-sizing: border-box;
+  }
+
+
+  .acs-category-section {
+    width: 100%;
+    max-width: 100%;
+
+    margin-bottom: 45px;
+
+    box-sizing: border-box;
+  }
+
+
+  .acs-header {
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .acs-title {
+    font-size: 26px;
+  }
+
+
+  .acs-grid {
+    width: 100%;
+    max-width: 100%;
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    gap: 16px;
+
+    box-sizing: border-box;
+  }
+
+
+  .acs-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    min-height: 355px;
+
+    padding: 10px;
+
+    border-radius: 16px;
+
+    box-sizing: border-box;
+  }
+
+
+  .acs-image-wrap {
+    height: 165px;
+  }
+
+
+  .acs-card-title {
+    font-size: 16px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   1 CARD
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+  .acs-section {
+    width: 100%;
+    max-width: 100%;
+
+    padding:
+      42px
+      12px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+
+  .acs-container {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0 auto;
+  }
+
+
+  .acs-header {
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    padding-bottom: 18px;
+  }
+
+
+  .acs-title {
+    font-size: 23px;
+  }
+
+
+  .acs-view-all-btn {
+    min-width: auto;
+
+    padding:
+      9px
+      13px;
+
+    font-size: 12px;
+
+    flex-shrink: 0;
+  }
+
+
+  .acs-category-section {
+    margin-bottom: 38px;
+  }
+
+
+  .acs-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .acs-card {
+    width: 100%;
+    max-width: 100%;
+
+    min-height: 390px;
+
+    padding: 11px;
+
+    border-radius: 17px;
+  }
+
+
+  .acs-image-wrap {
+    height: 215px;
+  }
+
+
+  .acs-content {
+    padding:
+      14px
+      5px
+      4px;
+  }
+
+
+  .acs-card-title {
+    min-height: auto;
+
+    font-size: 18px;
+  }
+
+
+  .acs-price {
+    font-size: 18px;
+  }
+
+
+  .acs-details-btn {
+    padding:
+      11px
+      14px;
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .acs-title {
+    font-size: 20px;
+  }
+
+
+  .acs-view-all-btn {
+    padding:
+      8px
+      10px;
+
+    font-size: 11px;
+  }
+
+
+  .acs-image-wrap {
+    height: 190px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.acs-view-all-btn:focus-visible,
+.acs-details-btn:focus-visible {
+  outline:
+    3px solid
+    rgba(124, 58, 237, 0.20);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .acs-card {
+    opacity: 1;
+
+    transform: none;
+
+    animation: none;
+
+    transition: none;
+  }
+
+
+  .acs-card::before,
+  .acs-card::after,
+  .acs-image,
+  .acs-details-btn,
+  .acs-view-all-btn,
+  .acs-card-title {
+    transition: none;
+  }
+
+
+  .acs-card:hover {
+    transform: none;
+  }
+
+
+  .acs-card:hover
+  .acs-image {
+    transform: none;
+  }
+
+}

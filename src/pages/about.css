@@ -1,0 +1,2257 @@
+/* =========================================================
+   ABOUT PAGE
+   UNIQUE NAMESPACE: about-
+========================================================= */
+
+
+/* =========================================================
+   RESET / PAGE
+========================================================= */
+
+.sh-legacy-about .about-page,
+.sh-legacy-about .about-page *,
+.sh-legacy-about .about-page *::before,
+.sh-legacy-about .about-page *::after {
+  box-sizing: border-box;
+}
+
+.sh-legacy-about .about-page {
+  width: 100%;
+  max-width: 100%;
+
+  margin: 0;
+
+  background: #ffffff;
+
+  color: #0d1b17;
+
+  overflow-x: clip;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.sh-legacy-about .about-page .about-container {
+  width: min(
+    1200px,
+    calc(100% - 48px)
+  );
+
+  max-width: 1200px;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.sh-legacy-about .about-hero {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+
+  min-height: 72vh;
+
+  display: flex;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 78% 25%,
+      rgba(
+        99,
+        102,
+        241,
+        0.24
+      ),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 12% 90%,
+      rgba(
+        124,
+        58,
+        237,
+        0.18
+      ),
+      transparent 34%
+    ),
+    linear-gradient(
+      130deg,
+      #07322a 0%,
+      #08392f 48%,
+      #07322a 100%
+    );
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.sh-legacy-about .about-hero-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        255,
+        0.035
+      )
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.035
+      )
+      1px,
+      transparent 1px
+    );
+
+  background-size:
+    60px
+    60px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   HERO GLOW
+========================================================= */
+
+.sh-legacy-about .about-hero-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.sh-legacy-about .about-hero-glow--a {
+  width: 480px;
+  height: 480px;
+
+  top: -150px;
+  right: -100px;
+
+  background: #095a49;
+
+  opacity: 0.15;
+
+  animation:
+    aboutGlowA
+    10s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.sh-legacy-about .about-hero-glow--b {
+  width: 340px;
+  height: 340px;
+
+  left: -100px;
+  bottom: -120px;
+
+  background: #0b6b57;
+
+  opacity: 0.12;
+
+  animation:
+    aboutGlowB
+    12s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes aboutGlowA {
+
+  from {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+
+  to {
+    transform:
+      translate3d(
+        -35px,
+        30px,
+        0
+      )
+      scale(1.07);
+  }
+
+}
+
+@keyframes aboutGlowB {
+
+  from {
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      );
+  }
+
+  to {
+    transform:
+      translate3d(
+        38px,
+        -24px,
+        0
+      )
+      scale(1.08);
+  }
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.sh-legacy-about .about-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    76px
+    0;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.sh-legacy-about .about-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  padding:
+    7px
+    15px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius: 100px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  color: #f5b335;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+
+  backdrop-filter:
+    blur(10px);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.sh-legacy-about .about-hero-title {
+  max-width: 850px;
+
+  margin:
+    0
+    0
+    22px;
+
+  font-size:
+    clamp(
+      44px,
+      6vw,
+      72px
+    );
+
+  font-weight: 800;
+
+  line-height: 1.04;
+
+  letter-spacing:
+    -2px;
+}
+
+.sh-legacy-about .about-hero-title span {
+  background:
+    linear-gradient(
+      100deg,
+      #f5b335 0%,
+      #f5b335 45%,
+      #ffd27a 100%
+    );
+
+  background-size:
+    180%
+    auto;
+
+  -webkit-background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  background-clip:
+    text;
+
+  animation:
+    aboutGradientText
+    6s
+    linear
+    infinite;
+}
+
+@keyframes aboutGradientText {
+
+  from {
+    background-position:
+      0%
+      center;
+  }
+
+  to {
+    background-position:
+      180%
+      center;
+  }
+
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.sh-legacy-about .about-hero-description {
+  max-width: 650px;
+
+  margin:
+    0
+    0
+    30px;
+
+  color: #cbd5e1;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.sh-legacy-about .about-hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.sh-legacy-about .about-primary-btn,
+.sh-legacy-about .about-secondary-btn {
+  min-height: 46px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    12px
+    22px;
+
+  box-sizing: border-box;
+
+  border-radius: 11px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.sh-legacy-about .about-primary-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #095a49,
+      #0b6b57
+    );
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    transparent;
+
+  box-shadow:
+    0 10px 28px
+    rgba(
+      99,
+      102,
+      241,
+      0.28
+    );
+}
+
+.sh-legacy-about .about-primary-btn svg,
+.sh-legacy-about .about-story-btn svg,
+.sh-legacy-about .about-cta-btn svg {
+  width: 16px;
+  height: 16px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.sh-legacy-about .about-primary-btn:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 15px 34px
+    rgba(
+      99,
+      102,
+      241,
+      0.38
+    );
+}
+
+.sh-legacy-about .about-primary-btn:hover svg,
+.sh-legacy-about .about-story-btn:hover svg,
+.sh-legacy-about .about-cta-btn:hover svg {
+  transform:
+    translateX(4px);
+}
+
+.sh-legacy-about .about-secondary-btn {
+  color: #ffffff;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.sh-legacy-about .about-secondary-btn:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   STATS SECTION
+========================================================= */
+
+.sh-legacy-about .about-stats {
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  padding:
+    42px
+    0;
+ display: flex;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f4f6f1 100%
+    );
+
+  border-bottom:
+    1px solid #e5e7eb;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   STATS GRID
+========================================================= */
+
+.sh-legacy-about .about-stats
+.about-stats-grid {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 0 24px;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 220px);
+
+  justify-content: center;
+
+  gap: 18px;
+
+  align-items: stretch;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.sh-legacy-about .about-stat-card {
+  position: relative;
+
+  width: 220px;
+  min-width: 0;
+
+  min-height: 180px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    25px
+    18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f4f6f1 100%
+    );
+
+  border:
+    1px solid
+    #e2e8f0;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 16px
+    rgba(
+      15,
+      23,
+      42,
+      0.04
+    );
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sh-legacy-about .about-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(
+        79,
+        70,
+        229,
+        0.12
+      ),
+      transparent 60%
+    );
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease;
+}
+
+.sh-legacy-about .about-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  left: 24px;
+  right: 24px;
+  bottom: 0;
+
+  height: 3px;
+
+  border-radius:
+    20px
+    20px
+    0
+    0;
+
+  background:
+    linear-gradient(
+      90deg,
+      #095a49,
+      #0b6b57,
+      #0b6b57
+    );
+
+  transform:
+    scaleX(0);
+
+  transform-origin:
+    center;
+
+  transition:
+    transform 0.35s ease;
+}
+
+.sh-legacy-about .about-stat-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(
+      79,
+      70,
+      229,
+      0.25
+    );
+
+  box-shadow:
+    0 16px 34px
+    rgba(
+      79,
+      70,
+      229,
+      0.10
+    );
+}
+
+.sh-legacy-about .about-stat-card:hover::before {
+  opacity: 1;
+}
+
+.sh-legacy-about .about-stat-card:hover::after {
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.sh-legacy-about .about-stat-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-bottom: 3px;
+
+  border-radius: 15px;
+
+  color: #0b6b57;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        79,
+        70,
+        229,
+        0.10
+      ),
+      rgba(
+        124,
+        58,
+        237,
+        0.07
+      )
+    );
+
+  border:
+    1px solid
+    rgba(
+      79,
+      70,
+      229,
+      0.14
+    );
+
+  box-shadow:
+    inset
+    0
+    1px
+    0
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    ),
+    0
+    5px
+    14px
+    rgba(
+      79,
+      70,
+      229,
+      0.06
+    );
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sh-legacy-about .about-stat-icon svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+}
+
+.sh-legacy-about .about-stat-card:hover
+.about-stat-icon {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b6b57,
+      #0b6b57
+    );
+
+  transform:
+    translateY(-2px)
+    rotate(-4deg)
+    scale(1.06);
+
+  box-shadow:
+    0 10px 24px
+    rgba(
+      79,
+      70,
+      229,
+      0.24
+    );
+}
+
+
+/* =========================================================
+   STAT NUMBER
+========================================================= */
+
+.sh-legacy-about .about-stat-number {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 3px;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing:
+    -0.7px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b6b57,
+      #0b6b57
+    );
+
+  -webkit-background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  background-clip:
+    text;
+}
+
+
+/* =========================================================
+   STAT LABEL
+========================================================= */
+
+.sh-legacy-about .about-stat-label {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 170px;
+
+  margin: 0;
+
+  color: #586862;
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.sh-legacy-about .about-story-section {
+  padding:
+    90px
+    0;
+
+  overflow: hidden;
+}
+
+.sh-legacy-about .about-story-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.08fr
+    )
+    minmax(
+      0,
+      0.92fr
+    );
+
+  align-items: center;
+
+  gap: 72px;
+}
+
+.sh-legacy-about .about-section-label {
+  display: inline-block;
+
+  margin-bottom: 13px;
+
+  color: #0b6b57;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+.sh-legacy-about .about-story-content h2 {
+  max-width: 660px;
+
+  margin:
+    0
+    0
+    23px;
+
+  color: #0d1b17;
+
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      46px
+    );
+
+  line-height: 1.13;
+
+  letter-spacing:
+    -1px;
+}
+
+.sh-legacy-about .about-story-content p {
+  max-width: 680px;
+
+  margin:
+    0
+    0
+    14px;
+
+  color: #586862;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   STORY BUTTON
+========================================================= */
+
+.sh-legacy-about .about-story-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 12px;
+
+  padding:
+    11px
+    19px;
+
+  border-radius: 9px;
+
+  background: #08392f;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 6px 16px
+    rgba(
+      15,
+      23,
+      42,
+      0.15
+    );
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.sh-legacy-about .about-story-btn:hover {
+  background: #0b6b57;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 24px
+    rgba(
+      79,
+      70,
+      229,
+      0.20
+    );
+}
+
+
+/* =========================================================
+   STORY VISUAL
+========================================================= */
+
+.sh-legacy-about .about-story-visual {
+  position: relative;
+
+  min-height: 390px;
+}
+
+.sh-legacy-about .about-visual-card {
+  position: absolute;
+
+  box-sizing: border-box;
+
+  padding:
+    30px;
+
+  border-radius: 20px;
+
+  border:
+    1px solid
+    #e2e8f0;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.sh-legacy-about .about-visual-card:hover {
+  transform:
+    translateY(-7px);
+}
+
+.sh-legacy-about .about-visual-card--primary {
+  width: 76%;
+
+  top: 10px;
+  right: 0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f4f6f1
+    );
+
+  box-shadow:
+    0 14px 38px
+    rgba(
+      15,
+      23,
+      42,
+      0.08
+    );
+}
+
+.sh-legacy-about .about-visual-card--dark {
+  width: 66%;
+
+  left: 0;
+  bottom: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #08392f,
+      #07322a
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 18px 40px
+    rgba(
+      15,
+      23,
+      42,
+      0.22
+    );
+}
+
+
+/* =========================================================
+   PREMIUM COMMON ICONS
+========================================================= */
+
+.sh-legacy-about .about-visual-icon,
+.sh-legacy-about .about-step-icon,
+.sh-legacy-about .about-benefit-icon {
+  position: relative;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(
+        79,
+        70,
+        229,
+        0.12
+      ),
+      rgba(
+        124,
+        58,
+        237,
+        0.07
+      )
+    );
+
+  color: #0b6b57;
+
+  border:
+    1px solid
+    rgba(
+      79,
+      70,
+      229,
+      0.14
+    );
+
+  box-shadow:
+    inset
+    0
+    1px
+    0
+    rgba(
+      255,
+      255,
+      255,
+      0.9
+    ),
+    0
+    6px
+    18px
+    rgba(
+      79,
+      70,
+      229,
+      0.08
+    );
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sh-legacy-about .about-visual-icon {
+  margin-bottom: 17px;
+}
+
+.sh-legacy-about .about-step-icon {
+  margin-bottom: 21px;
+}
+
+.sh-legacy-about .about-benefit-icon {
+  margin-bottom: 20px;
+}
+
+.sh-legacy-about .about-visual-icon::before,
+.sh-legacy-about .about-step-icon::before,
+.sh-legacy-about .about-benefit-icon::before {
+  content: "";
+
+  position: absolute;
+
+  top: -45%;
+  left: -35%;
+
+  width: 70%;
+  height: 170%;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.48
+      ),
+      transparent
+    );
+
+  transform:
+    rotate(18deg);
+
+  opacity: 0;
+
+  transition:
+    left 0.6s ease,
+    opacity 0.3s ease;
+}
+
+.sh-legacy-about .about-visual-icon svg,
+.sh-legacy-about .about-step-icon svg,
+.sh-legacy-about .about-benefit-icon svg {
+  position: relative;
+
+  z-index: 2;
+
+  width: 26px;
+  height: 26px;
+
+  transition:
+    transform 0.3s
+    cubic-bezier(
+      0.22,
+      1,
+      0.36,
+      1
+    );
+}
+
+.sh-legacy-about .about-visual-card:hover
+.about-visual-icon,
+.sh-legacy-about .about-step-card:hover
+.about-step-icon,
+.sh-legacy-about .about-benefit-card:hover
+.about-benefit-icon {
+  color: #ffffff;
+
+  border-color:
+    transparent;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b6b57,
+      #0b6b57
+    );
+
+  transform:
+    translateY(-2px)
+    rotate(-4deg)
+    scale(1.06);
+
+  box-shadow:
+    0 12px 28px
+    rgba(
+      79,
+      70,
+      229,
+      0.25
+    );
+}
+
+.sh-legacy-about .about-visual-card:hover
+.about-visual-icon::before,
+.sh-legacy-about .about-step-card:hover
+.about-step-icon::before,
+.sh-legacy-about .about-benefit-card:hover
+.about-benefit-icon::before {
+  left: 120%;
+
+  opacity: 1;
+}
+
+.sh-legacy-about .about-visual-card:hover
+.about-visual-icon svg,
+.sh-legacy-about .about-step-card:hover
+.about-step-icon svg,
+.sh-legacy-about .about-benefit-card:hover
+.about-benefit-icon svg {
+  transform:
+    scale(1.08);
+}
+
+.sh-legacy-about .about-visual-card--dark
+.about-visual-icon {
+  color: #f5b335;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+
+  border-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+}
+
+.sh-legacy-about .about-visual-card h3 {
+  margin:
+    0
+    0
+    10px;
+
+  font-size: 18px;
+}
+
+.sh-legacy-about .about-visual-card p {
+  margin: 0;
+
+  color: #586862;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+.sh-legacy-about .about-visual-card--dark p {
+  color: #cbd5e1;
+}
+
+
+/* =========================================================
+   COMMON SECTION HEADING
+========================================================= */
+
+.sh-legacy-about .about-section-heading {
+  max-width: 680px;
+
+  margin:
+    0
+    auto
+    45px;
+
+  text-align: center;
+}
+
+.sh-legacy-about .about-section-heading h2 {
+  margin:
+    0
+    0
+    11px;
+
+  color: #0d1b17;
+
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      46px
+    );
+
+  line-height: 1.15;
+
+  letter-spacing:
+    -0.8px;
+}
+
+.sh-legacy-about .about-section-heading p {
+  margin: 0;
+
+  color: #586862;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.sh-legacy-about .about-how-section {
+  padding:
+    85px
+    0;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc,
+      #f4f6f1
+    );
+}
+
+.sh-legacy-about .about-steps-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   STEP CARD
+========================================================= */
+
+.sh-legacy-about .about-step-card {
+  position: relative;
+
+  min-height: 245px;
+
+  padding:
+    27px
+    22px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border:
+    1px solid
+    #e2e8f0;
+
+  border-radius: 17px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 5px 18px
+    rgba(
+      15,
+      23,
+      42,
+      0.04
+    );
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.sh-legacy-about .about-step-card:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(
+      79,
+      70,
+      229,
+      0.25
+    );
+
+  box-shadow:
+    0 16px 32px
+    rgba(
+      79,
+      70,
+      229,
+      0.10
+    );
+}
+
+.sh-legacy-about .about-step-number {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  color: #cbd5e1;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.sh-legacy-about .about-step-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #08392f;
+
+  font-size: 17px;
+}
+
+.sh-legacy-about .about-step-card p {
+  margin: 0;
+
+  color: #586862;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   WHY SECTION
+========================================================= */
+
+.sh-legacy-about .about-why-section {
+  padding:
+    85px
+    0;
+
+  background: #ffffff;
+}
+
+.sh-legacy-about .about-benefits-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   BENEFIT CARD
+========================================================= */
+
+.sh-legacy-about .about-benefit-card {
+  min-height: 230px;
+
+  padding:
+    27px
+    22px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    #e2e8f0;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f4f6f1
+    );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.sh-legacy-about .about-benefit-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(
+      79,
+      70,
+      229,
+      0.24
+    );
+
+  box-shadow:
+    0 15px 32px
+    rgba(
+      79,
+      70,
+      229,
+      0.09
+    );
+}
+
+.sh-legacy-about .about-benefit-card h3 {
+  margin:
+    0
+    0
+    9px;
+
+  color: #08392f;
+
+  font-size: 17px;
+}
+
+.sh-legacy-about .about-benefit-card p {
+  margin: 0;
+
+  color: #586862;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.sh-legacy-about .about-cta {
+  position: relative;
+
+  padding:
+    85px
+    0;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #08392f,
+      #07322a
+    );
+
+  isolation: isolate;
+}
+
+.sh-legacy-about .about-cta-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -260px;
+  left: 50%;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        99,
+        102,
+        241,
+        0.35
+      ),
+      transparent 70%
+    );
+
+  filter:
+    blur(30px);
+
+  pointer-events: none;
+}
+
+.sh-legacy-about .about-cta-content {
+  position: relative;
+
+  z-index: 2;
+}
+
+.sh-legacy-about .about-cta-content > span {
+  color: #f5b335;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.17em;
+
+  text-transform:
+    uppercase;
+}
+
+.sh-legacy-about .about-cta-content h2 {
+  max-width: 720px;
+
+  margin:
+    14px
+    auto
+    15px;
+
+  font-size:
+    clamp(
+      34px,
+      4.5vw,
+      48px
+    );
+
+  line-height: 1.14;
+
+  letter-spacing:
+    -1px;
+}
+
+.sh-legacy-about .about-cta-content p {
+  margin:
+    0
+    0
+    27px;
+
+  color: #cbd5e1;
+
+  font-size: 15px;
+}
+
+.sh-legacy-about .about-cta-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    12px
+    22px;
+
+  background: #ffffff;
+
+  color: #08392f;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 26px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.sh-legacy-about .about-cta-btn:hover {
+  color: #0b6b57;
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 15px 34px
+    rgba(
+      0,
+      0,
+      0,
+      0.24
+    );
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .sh-legacy-about .about-page
+  .about-container {
+    width:
+      calc(
+        100% - 40px
+      );
+  }
+
+  .sh-legacy-about .about-steps-grid,
+  .sh-legacy-about .about-benefits-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+  }
+
+  .sh-legacy-about .about-story-grid {
+    gap: 50px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .sh-legacy-about .about-page
+  .about-container,
+  .sh-legacy-about .about-stats
+  .about-stats-grid {
+    width:
+      calc(
+        100% - 32px
+      );
+  }
+
+  .sh-legacy-about .about-hero {
+    min-height: auto;
+  }
+
+  .sh-legacy-about .about-hero-content {
+    padding:
+      82px
+      0
+      72px;
+  }
+
+  .sh-legacy-about .about-stats {
+    padding:
+      34px
+      0;
+  }
+
+  .sh-legacy-about .about-stats
+  .about-stats-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap: 14px;
+  }
+
+  .sh-legacy-about .about-stat-card {
+    min-height: 165px;
+
+    padding:
+      20px
+      14px;
+  }
+
+  .sh-legacy-about .about-story-section {
+    padding:
+      70px
+      0;
+  }
+
+  .sh-legacy-about .about-story-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 45px;
+  }
+
+  .sh-legacy-about .about-story-visual {
+    min-height: 360px;
+  }
+
+  .sh-legacy-about .about-how-section,
+  .sh-legacy-about .about-why-section {
+    padding:
+      70px
+      0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .sh-legacy-about .about-page
+  .about-container,
+  .sh-legacy-about .about-stats
+  .about-stats-grid {
+    width:
+      calc(
+        100% - 24px
+      );
+  }
+
+  .sh-legacy-about .about-hero-content {
+    padding:
+      70px
+      0
+      62px;
+  }
+
+  .sh-legacy-about .about-eyebrow {
+    font-size: 10px;
+
+    letter-spacing:
+      0.1em;
+  }
+
+  .sh-legacy-about .about-hero-title {
+    font-size:
+      clamp(
+        38px,
+        11vw,
+        48px
+      );
+
+    letter-spacing:
+      -1.2px;
+  }
+
+  .sh-legacy-about .about-hero-description {
+    font-size: 15px;
+  }
+
+  .sh-legacy-about .about-hero-buttons {
+    width: 100%;
+
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .sh-legacy-about .about-primary-btn,
+  .sh-legacy-about .about-secondary-btn {
+    width: 100%;
+  }
+
+  .sh-legacy-about .about-stats {
+    padding:
+      28px
+      0;
+  }
+
+  .sh-legacy-about .about-stats
+  .about-stats-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
+
+    gap: 10px;
+  }
+
+  .sh-legacy-about .about-stat-card {
+    min-height: 150px;
+
+    padding:
+      18px
+      10px;
+
+    border-radius: 15px;
+  }
+
+  .sh-legacy-about .about-stat-icon {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 12px;
+  }
+
+  .sh-legacy-about .about-stat-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .sh-legacy-about .about-stat-number {
+    font-size: 27px;
+  }
+
+  .sh-legacy-about .about-stat-label {
+    font-size: 11px;
+  }
+
+  .sh-legacy-about .about-story-content h2,
+  .sh-legacy-about .about-section-heading h2,
+  .sh-legacy-about .about-cta-content h2 {
+    font-size:
+      clamp(
+        30px,
+        9vw,
+        38px
+      );
+  }
+
+  .sh-legacy-about .about-story-visual {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .sh-legacy-about .about-visual-card,
+  .sh-legacy-about .about-visual-card--primary,
+  .sh-legacy-about .about-visual-card--dark {
+    position: relative;
+
+    width: 100%;
+
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+
+    padding: 25px;
+  }
+
+  .sh-legacy-about .about-steps-grid,
+  .sh-legacy-about .about-benefits-grid {
+    grid-template-columns:
+      1fr;
+
+    gap: 14px;
+  }
+
+  .sh-legacy-about .about-step-card,
+  .sh-legacy-about .about-benefit-card {
+    min-height: auto;
+  }
+
+  .sh-legacy-about .about-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .sh-legacy-about .about-cta {
+    padding:
+      68px
+      0;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .sh-legacy-about .about-page
+  .about-container,
+  .sh-legacy-about .about-stats
+  .about-stats-grid {
+    width:
+      calc(
+        100% - 20px
+      );
+  }
+
+  .sh-legacy-about .about-hero-content {
+    padding:
+      62px
+      0
+      54px;
+  }
+
+  .sh-legacy-about .about-hero-title {
+    font-size: 35px;
+  }
+
+  .sh-legacy-about .about-stat-number {
+    font-size: 24px;
+  }
+
+  .sh-legacy-about .about-stat-label {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.sh-legacy-about .about-primary-btn:focus-visible,
+.sh-legacy-about .about-secondary-btn:focus-visible,
+.sh-legacy-about .about-story-btn:focus-visible,
+.sh-legacy-about .about-cta-btn:focus-visible {
+  outline:
+    3px solid
+    rgba(
+      99,
+      102,
+      241,
+      0.30
+    );
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+  reduce
+) {
+
+  .sh-legacy-about .about-hero-glow,
+  .sh-legacy-about .about-hero-title span {
+    animation: none;
+  }
+
+  .sh-legacy-about .about-primary-btn,
+  .sh-legacy-about .about-secondary-btn,
+  .sh-legacy-about .about-story-btn,
+  .sh-legacy-about .about-stat-card,
+  .sh-legacy-about .about-stat-icon,
+  .sh-legacy-about .about-visual-card,
+  .sh-legacy-about .about-visual-icon,
+  .sh-legacy-about .about-step-card,
+  .sh-legacy-about .about-step-icon,
+  .sh-legacy-about .about-benefit-card,
+  .sh-legacy-about .about-benefit-icon,
+  .sh-legacy-about .about-cta-btn {
+    transition: none;
+  }
+
+}
+/* Evergreen alignment: the hero headline sits on a dark panel, so it must be light. */
+.sh-legacy-about .about-hero-title { color: #fff; font-family: var(--font-display); }
+.sh-legacy-about .about-hero-description { color: #cfe3dc; }
