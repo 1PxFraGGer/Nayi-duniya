@@ -1,19 +1,20 @@
+
 import axios from "axios";
+
+const DEMO_MODE = import.meta.env.VITE_DEMO_MODE === "true";
 
 const API = axios.create({
   baseURL:
     import.meta.env.VITE_API_URL ||
     "https://serviceapi.wedpictures.in/api",
-
   timeout: 15000,
-  withCredentials: true
+  withCredentials: !DEMO_MODE,
 });
 
-export default API;
-
-// Opt-in development fixture. Production builds never activate sample data.
-if (import.meta.env.DEV && import.meta.env.VITE_DEMO_MODE === "true") {
+// Enable demo data in development and production
+if (DEMO_MODE) {
   const { demoAdapter } = await import("../../tests/demoAdapter.js");
   API.defaults.adapter = demoAdapter;
 }
 
+export default API;
