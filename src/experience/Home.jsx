@@ -29,7 +29,7 @@ export default function Home() {
       <div className="sh-container hm-hero-grid">
         <div className="hm-hero-copy">
           <p className="sh-eyebrow">A little help. A better home.</p>
-          <h1 id="hm-title">Expert service.<br/><em>Peace of mind.</em></h1>
+          <h1 id="hm-title">A happier home.<br/><em>A little help away.</em></h1>
           <p className="sh-lead">{services.data && categories.data ? `Browse ${services.data.length} services across ${catList.length} ${catList.length === 1 ? 'category' : 'categories'}. ` : ''}See the price, choose your time, and follow your booking from start to finish.</p>
           <form className="hm-search" role="search" onSubmit={e => { e.preventDefault(); navigate(`/services${q.trim() ? `?q=${encodeURIComponent(q.trim())}` : ''}`); }}>
             <FiSearch aria-hidden="true" /><label htmlFor="hm-search" className="sh-sr-only">Search home services</label>
@@ -39,7 +39,7 @@ export default function Home() {
           {catList.length > 0 && <div className="hm-quick" aria-label="Popular categories"><span>Browse:</span>{catList.slice(0, 5).map((c, i) => <Link key={c.id} to={`/services/category/${c.id}`}><CategoryIcon name={c.name} aria-hidden="true" className={tintFor(i)} />{c.name}</Link>)}</div>}
           <ul className="hm-points"><li><FiTag aria-hidden="true" />Prices shown upfront</li><li><FiCalendar aria-hidden="true" />You choose the slot</li><li><FiCheckCircle aria-hidden="true" />Track every booking</li></ul>
         </div>
-        <QuickBook services={visible} categories={catList} />
+        <div className="premium-hero-art"><img src="/home-interior.webp" width="900" height="900" alt="Bright, thoughtfully cared for living room with comfortable seating" fetchPriority="high"/><div className="premium-image-note"><FiCheckCircle/><span><strong>Your home. In good hands.</strong><small>Thoughtful services for everyday living</small></span></div></div>
       </div>
     </section>
 
@@ -53,6 +53,7 @@ export default function Home() {
       : services.error && !categories.error ? <section className="hm-section sh-container"><LoadError error={services.error} retry={services.refresh} /></section>
       : groups.length ? <CategoryServicesSections groups={groups} savedIds={saved.ids} /> : null}
 
+    <section className="sh-container premium-booking"><div><p className="sh-eyebrow">Made for your everyday</p><h2>Less on your list.<br/><em>More time for you.</em></h2><p>Discover services, compare the details, and find a convenient appointment. Everything starts with the right help.</p><Link className="sh-inline-link" to="/services">Explore home services <FiArrowRight/></Link></div><QuickBook services={visible} categories={catList}/></section>
     <section className="hm-how" aria-labelledby="hm-how-title"><div className="sh-container hm-how-grid">
       <SectionHeading id="hm-how-title" eyebrow="How it works" title={<>Booked in <em>three simple steps.</em></>} text="No phone tag, no guesswork — just clear options and a booking you can follow." action={null} />
       <ol className="hm-steps">{steps.map(([n, title, text, icon]) => <li key={n}><Reveal><span className="hm-step-n">{n}</span><span className="hm-step-icon" aria-hidden="true">{icon}</span><div><h3>{title}</h3><p>{text}</p></div></Reveal></li>)}</ol>
@@ -64,6 +65,8 @@ export default function Home() {
     </section>
   </div>;
 }
+
+
 
 
 

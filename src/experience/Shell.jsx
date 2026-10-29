@@ -1,3 +1,4 @@
+import { ThemeSwitcher } from '../context/ThemeContext';
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { FiArrowRight, FiArrowUpRight, FiChevronDown, FiHeart, FiMapPin, FiMenu, FiSearch, FiShoppingBag, FiUser, FiX } from 'react-icons/fi';
@@ -66,7 +67,7 @@ export function Header() {
         <NavLink to="/daily-deals">Daily deals</NavLink>
         <NavLink to="/blogs">Journal</NavLink>
       </nav>
-      <div className="sh-nav-tools">
+      <div className="sh-nav-tools"><ThemeSwitcher/>
         <form className="sh-nav-search" role="search" onSubmit={search}><FiSearch aria-hidden="true" /><label className="sh-sr-only" htmlFor="nav-search">Search services</label><input id="nav-search" value={q} onChange={e => setQ(e.target.value)} placeholder="Search services" /></form>
         <label className="sh-city sh-desktop-only"><FiMapPin aria-hidden="true" /><span className="sh-sr-only">Select city</span><select value={city} onChange={e => setCity(e.target.value)}>{CITIES.map(name => <option key={name}>{name}</option>)}</select></label>
         <Link className="sh-icon-button sh-desktop-only" to="/wishlist" aria-label="Saved services"><FiHeart /></Link>
@@ -80,7 +81,7 @@ export function Header() {
     <div className={`sh-drawer-backdrop${drawer ? ' is-open' : ''}`} onClick={() => setOpenMenu(null)} aria-hidden="true" />
     <nav className={`sh-mobile-menu${drawer ? ' is-open' : ''}`} id="sh-mobile-menu" aria-label="Mobile navigation" aria-hidden={!drawer} inert={!drawer}>
       <div className="sh-drawer-head"><Brand /><button ref={drawerClose} className="sh-icon-button" aria-label="Close menu" onClick={() => setOpenMenu(null)}><FiX /></button></div>
-      <div className="sh-drawer-body">
+      <div className="sh-drawer-body"><ThemeSwitcher expanded/>
         <form className="sh-drawer-search" role="search" onSubmit={search}><FiSearch aria-hidden="true" /><label className="sh-sr-only" htmlFor="drawer-search">Search services</label><input id="drawer-search" value={q} onChange={e => setQ(e.target.value)} placeholder="What do you need?" /><button className="sh-icon-button" aria-label="Search"><FiArrowRight /></button></form>
         <div><h3>Browse</h3><div className="sh-drawer-links">{[['/services', 'All services'], ['/popular-services', 'Popular services'], ['/daily-deals', 'Daily deals'], ['/blogs', 'Journal'], ['/about', 'About us']].map(([to, label]) => <Link key={to} to={to}>{label}<FiArrowUpRight /></Link>)}</div></div>
         {list.length > 0 && <div><h3>Categories</h3><div className="sh-drawer-cats">{list.map((c, i) => <CategoryLink key={c.id} category={c} index={i} />)}</div></div>}
@@ -94,7 +95,7 @@ export function Header() {
 export function Footer() {
   return <footer className="sh-footer"><div className="sh-container">
     <div className="sh-footer-top">
-      <div><p className="sh-eyebrow">Ready when you are</p><h2>Find the right help, <em>book it your way.</em></h2><Link className="sh-button sh-button-accent" to="/services">Browse all services <FiArrowUpRight /></Link></div>
+      <div><p className="sh-eyebrow">Ready when you are</p><h2>Need a hand <em>around the house?</em></h2><Link className="sh-button sh-button-accent" to="/services">Browse all services <FiArrowUpRight /></Link></div>
       <div className="sh-footer-links">
         <div><h3>Explore</h3><Link to="/services">All services</Link><Link to="/categories">Categories</Link><Link to="/popular-services">Popular services</Link><Link to="/daily-deals">Daily deals</Link><Link to="/blogs">Journal</Link></div>
         <div><h3>Company</h3><Link to="/about">About us</Link><Link to="/contact">Contact</Link><Link to="/reviews">Reviews</Link><Link to="/careers">Careers</Link><Link to="/investors">Investors</Link></div>
@@ -104,3 +105,4 @@ export function Footer() {
     <div className="sh-footer-bottom"><Brand label="ServiceHub home" /><span>© {new Date().getFullYear()} ServiceHub</span><Link to="/privacy">Privacy</Link><Link to="/terms">Terms</Link></div>
   </div></footer>;
 }
+
