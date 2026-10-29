@@ -14,6 +14,7 @@ import { Bookings, BookingDetail, BookingSuccess, Notifications } from './experi
 import Account, { Profile } from './experience/Account';
 import { Blogs, BlogDetail, Reviews, Contact, NotFound } from './experience/Content';
 import './experience/theme.css';
+import './experience/premium.css';
 const ServiceDetail=lazy(()=>import('./pages/ServiceDetail'));
 const Addresses=lazy(()=>import('./pages/MyAddresses'));
 const About=lazy(()=>import('./pages/About'));
@@ -36,4 +37,6 @@ export default function App(){
   </Routes></Suspense></div></>}</PageTransition><Footer/><button className="sh-support-toggle" aria-label={chat?'Close support chat':'Open support chat'} aria-expanded={chat} onClick={()=>setChat(!chat)}><FiMessageCircle/></button>{chat&&<Suspense fallback={null}><Chat isOpen={chat} onClose={()=>setChat(false)}/></Suspense>}</div></div></MotionConfig>;
 }
 
-import './experience/voltcare.css';
+
+
+
